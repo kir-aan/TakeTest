@@ -1,0 +1,47 @@
+{% extends 'TakeTestApp/base.html' %}
+{% block content %}
+<hr>
+{% if user.userprofile.usertype == 'o' %}
+  <h5 class="text-primary">To create a new test click on the button below</h5>
+  <form method="get" action="{% url 'Test-Post' %}">
+    <button class="btn btn-outline-dark btn-block" type="submit">Create Test</button>
+</form>
+<hr>
+<h5  class="Display-6 text-danger">Instructions:</h5>
+<ul>
+  <li>The file uploaded should be .txt file only</li>
+  <li>The file format should be:</li>
+    <ul>
+      <li>Questions need to start with 'Q:'</li>
+      <li>Options need to start with 'optD' where D = option number.</li>
+      <li>Correct option should have '*' before or after 'optD'.</li>
+    </ul>
+  <li>Each question can only have 4 options.</li>
+  <li>Example:<br>Q: Which is the tallest building in the world?<br>
+    *opt1:Burj Khalifa<br>
+    opt2:Shanghai Tower<br>
+    opt3:CTF Finance center<br>
+    opt4:Kingdom clock tower <br>
+    <hr>
+    <p>In the above example opt1 is the correct answer/option.</p>
+  </li>
+</ul>
+{% elif user.userprofile.usertype == 's' %}
+  {% for tests in tests %}
+  <article class="media content-section">
+  <img class="rounded-circle article-img" src="{{ tests.user.userprofile.image.url }}">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ tests.user }}</a>
+      <small class="text-muted">{{ tests.date|date:"F d, Y" }}</small>
+    </div>
+    <h2><a style="color: #ee6572;" href="{% url 'Test-Making' organisationName=tests.user testName=tests.TestName pMarks=tests.PosMarks nMarks=tests.NegMarks%}">{{ tests.TestName }}</a></h2>
+    <p class="article-content" >Total Marks: {{ tests.MaxMarks }}, Max Time = {{ tests.TimeDuration }}hrs, Positive/Negative : {{ tests.PosMarks }}/{{ tests.NegMarks }} </p>
+  </div>
+  </article>
+  {% endfor %}
+
+{% else %}
+  <h5 class="text-primary">Homepage for new visitors</h5>
+{% endif %}
+{% endblock content%}

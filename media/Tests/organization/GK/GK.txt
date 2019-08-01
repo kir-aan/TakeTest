@@ -1,0 +1,46 @@
+Q:In which year of First World War Germany declared war on Russia and France?
+opt1*: 1914
+opt2: 1915
+opt3: 1916
+opt4: 1917
+Q:ICAO stands for
+opt1*: International Civil Aviation Organization
+opt2: Indian Corporation of Agriculture Organization
+opt3: Institute of Company of Accounts Organization
+opt4: None of the above
+Q:India has largest deposits of ____ in the world.
+opt1: Gold
+opt2: Copper
+opt3*: Mica
+opt4: None of the above.
+Q:How many Lok Sabha seats belong to Rajasthan?
+opt1: 32
+opt2*: 25
+opt3: 30
+opt4: 17
+Q:India's first satellite is named after
+opt1*: Aryabhatta
+opt2: Bhaskara II
+opt3: Bhaskara I
+opt4: Albert Einstein
+Q:India's first atomic reactor was
+opt1: Zerlina
+opt2: Dhruva
+opt3*: Apsara
+opt4: Kamini
+Q:In which year, terrorists crash two planes into New York's World Trade Centre on September 11 in a sequence of destruction?
+opt1: 2000
+opt2*: 2001
+opt3: 2002
+opt4: 2003
+Q:India's first ocean wave's energy project was launched in?
+opt1: 1981
+opt2*: 1991
+opt3: 1995
+opt4: 2000
+Q:In which of the following years, the membership of the Security Council was increased from 11 to 15 (under Article 23)?
+opt1: 1960
+opt2*: 1965
+opt3: 1972
+opt4: 1975
+

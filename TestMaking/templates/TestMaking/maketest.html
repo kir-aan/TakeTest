@@ -1,0 +1,25 @@
+{% extends 'TakeTestApp/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+    <center><h1 class="display-4">{{ testName }}</h1></center>
+<br>
+    <div class="content-section">
+    <!-- <form method="post" action="{% url 'dashboard' %}"> -->
+    <form name="testForm" onsubmit="return submitAnswers(answers = [{% for a in ans %} '{{ a }}',{% endfor %}],pMarks={{pMarks}},nMarks={{nMarks}})">
+    {% csrf_token %}
+        <ul>
+        {% for q, opts in quesBank.items %}
+                <h4>{{ q }}</h4><br>
+                <ol>
+                    {% for opt in opts %}
+                        <label class="radiocontainer"><input type="radio" value="{{ opt }}" name="q{{ forloop.parentloop.counter }}">{{opt}}</input></label><span class='checkmark'></span>
+                        <br>
+                    {% endfor %}
+                </ol>
+        {% endfor %}
+        </ul>
+        <center><button class="btn btn-outline-info" type="submit">Submit</button></center>
+    </form>
+    </div>
+{% endblock content%}

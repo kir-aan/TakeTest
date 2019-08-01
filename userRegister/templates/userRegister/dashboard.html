@@ -1,0 +1,12 @@
+{% extends 'TakeTestApp/base.html' %}
+{% block content %}
+{% if user.userprofile.usertype == 'o' %}
+<br>
+<p>Organization Dashboard will be displayed</p>
+{% else %}
+<br>
+<p>Student's Dashboard will be displayed</p>
+{% endif %}
+
+
+{% endblock content%}

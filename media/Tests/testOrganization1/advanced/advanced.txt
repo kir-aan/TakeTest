@@ -1,0 +1,28 @@
+Q: What is 2+2?
+opt1*: 4
+opt2: 5
+opt3: 3
+opt4: 0
+
+Q: Where are u from?
+opt1: Hyderabad
+opt2*: Secunderabad
+opt3: Rajasthan
+opt4: vizag
+
+Q: What is the capital of india?
+opt1*: Delhi
+opt2: Telangana
+opt3: Madhya Pradesh
+opt4: Gujrat
+
+Q: What is 2+1?
+opt1: 0
+opt2: 1
+opt3*: 3
+opt4: 6
+Q: Python is a _____ language
+opt1: Markup
+opt2*: Scripting
+opt3: programming
+opt4: English

@@ -84,9 +84,9 @@ DATABASES = {
         'OPTIONS': {
             'read_default_file': '/etc/mysql/my.cnf',
         },
-        'NAME': 'taketestworking',
+        'NAME': 'taketestfeature',
         'USER': 'root',
-        'PASSWORD': 'kiran8499',
+        'PASSWORD': 'K!ran8499',
         'HOST': 'localhost',
         'PORT': '3306',
     }

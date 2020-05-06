@@ -1,0 +1,11 @@
+Q: Which is the tallest building in the world?
+*opt1:Burj Khalifa
+opt2:Shanghai Tower
+opt3:CTF Finance center
+opt4:Kingdom clock Tower
+
+Q: What is the first alphabet in english language
+opt1: Z
+opt2:B
+opt3*:A
+opt4:U

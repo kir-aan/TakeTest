@@ -9,5 +9,5 @@ urlpatterns = [
     path('home/', views.home, name="TakeTest-Home"),
     path('about/', views.about, name="TakeTest-About"),
     path('post/', views_tests.post, name="Test-Post"),
-    path('testmake/<organisationName>/<testName>/<pMarks>/<nMarks>', views_testMake.MakeTest, name="Test-Making"),
+    path('testmake/', views_testMake.MakeTest2, name="Test-Making2")
 ]

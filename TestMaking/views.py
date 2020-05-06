@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from Test.models import TestInfo
 
 
-def MakeTest2(request):
+def MakeTest(request):
     if "startbtn" in request.POST:
         # currentStudent = request.user
         currentTestObj = TestInfo.objects.get(InputTextFile=request.POST['f_name'])

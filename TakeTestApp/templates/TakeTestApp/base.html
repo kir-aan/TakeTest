@@ -8,29 +8,25 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-
     <script>
-      function submitAnswers(answers,pMarks,nMarks){
-    	var total = answers.length;
-    	var score = 0;
-    	var choice = [];
-      for(var i = 0; i < total; i++){
-    		choice[i] = document.forms["testForm"]["q"+(i+1)].value;
-    	}
-      for(i = 0; i < total; i++){
-      if(choice[i] == (answers[i] + "\n")){
-        score+=pMarks;
+    function myNewFunct(qlength){
+      var i;
+      var ans=[];
+      for(i=1;i<=qlength;i++){
+        var qNum = 'q'+i.toString();
+        var j;
+        var flag=0;
+        for(j=1;j<=4;j++){
+          if(document.getElementById(qNum+j.toString()).checked){
+            ans += document.getElementById(qNum+j.toString()).value;
+            flag=1;
+          }
+        }
+        if(flag==0){
+          ans+="\n";
+        }
       }
-      else if(choice[i]==''){
-        continue;
-      }
-      else{
-        score-=nMarks;
-      }
-    }
-    alert("You scored " + score + " out of " + (total*pMarks));
-
-    return false;
+      document.getElementsByTagName("p")[0].setAttribute("value", ans);
     }
     </script>
 

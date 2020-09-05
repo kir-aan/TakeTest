@@ -25,4 +25,11 @@ def MakeTest(request):
         for qu in ques:
             quesBank[qu] = [options[x] for x in range(i, i + 4)]
             i = i + 4
-        return render(request, 'TestMaking/maketest.html', {'testName':currentTestObj.TestName,'quesBank': quesBank,'ans':ans,'pMarks':currentTestObj.PosMarks,'nMarks':currentTestObj.NegMarks})
+        return render(request, 'TestMaking/maketest.html', {'qlength':len(quesBank),'testName':currentTestObj.TestName,'quesBank': quesBank,'ans':ans,'pMarks':currentTestObj.PosMarks,'nMarks':currentTestObj.NegMarks})
+
+def TestSubmit(request):
+    if "submitbtn" in request.POST:
+        selectedAnswers = []
+        print(request.POST['qlength'])
+        print(request.POST.get('chosenAnswers',True))
+    return render(request,'TestMaking/completed.html')

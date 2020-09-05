@@ -1,6 +1,6 @@
 {% extends 'TakeTestApp/base.html' %}
 {% block content %}
-<hr>
+<br><br><br>
 {% if user.userprofile.usertype == 'o' %}
   <h5 class="text-primary">To create a new test click on the button below</h5>
   <form method="get" action="{% url 'Test-Post' %}">

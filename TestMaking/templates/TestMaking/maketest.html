@@ -6,20 +6,23 @@
 <br>
     <div class="content-section">
     <!-- <form method="post" action="{% url 'dashboard' %}"> -->
-    <form name="testForm" onsubmit="return submitAnswers(answers = [{% for a in ans %} '{{ a }}',{% endfor %}],pMarks={{pMarks}},nMarks={{nMarks}})">
+    <form name="testForm" method="POST" action="{% url 'Test-Submit' %}">
     {% csrf_token %}
         <ul>
         {% for q, opts in quesBank.items %}
                 <h4>{{ q }}</h4><br>
                 <ol>
                     {% for opt in opts %}
-                        <label class="radiocontainer"><input type="radio" value="{{ opt }}" name="q{{ forloop.parentloop.counter }}">{{opt}}</input></label><span class='checkmark'></span>
+                        <label class="radiocontainer">
+                          <input type="radio" value="{{ opt }}" name="q{{ forloop.parentloop.counter }}" id="q{{ forloop.parentloop.counter }}{{ forloop.counter }}">{{opt}}</input>
+                        </label><span class='checkmark'></span>
                         <br>
                     {% endfor %}
                 </ol>
         {% endfor %}
         </ul>
-        <center><button class="btn btn-outline-info" type="submit">Submit</button></center>
+        <center><button class="btn btn-outline-info" name="submitbtn" type="submit" onclick="myNewFunct({{ qlength }})">Submit</button></center>
+      <input type="text" name="qlength" value="{{ qlength }}" style="visibility: hidden;">
     </form>
     </div>
 {% endblock content%}
